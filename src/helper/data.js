@@ -6,7 +6,7 @@ import HtmlCss from "../images/html-css.png";
 const data = [
     {
       id: 1,
-      title: "HTML ve CSS",
+      title: "HTML - CSS",
       image: HtmlCss, // Resim dosya yolu burada olacak
       description: "HTML (HyperText Markup Language), web sayfalarının yapısını oluşturmak için kullanılır. CSS (Cascading Style Sheets) ise bu sayfalara stil vermek için kullanılır. HTML, sayfa elemanlarını belirlerken, CSS bu elemanların görünümünü ve düzenini kontrol eder."
     },
@@ -26,9 +26,18 @@ const data = [
       id: 4,
       title: "React",
       image: React, // Resim dosya yolu burada olacak
-      description: "React, kullanıcı arayüzleri oluşturmak için kullanılan popüler bir JavaScript kütüphanesidir. Bileşen tabanlı yaklaşımı ve sanal DOM kullanımı sayesinde büyük ve karmaşık uygulamaları daha yönetilebilir hale getirir."
+      description: "React, kullanıcı arayüzleri oluşturmak için kullanılan popüler bir JavaScript kütüphanesidir. Component tabanlı yaklaşımı ve sanal DOM kullanımı sayesinde büyük ve karmaşık uygulamaları daha yönetilebilir hale getirir."
     }
   ];
   
   export default data;
+
+  export const registration = [
+    // {
+    //     id:"",
+    //     name:"",
+    //     lastname:"",
+    //     email:""
+    // }
+  ]
   
