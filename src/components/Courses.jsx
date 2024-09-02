@@ -24,7 +24,7 @@ const Courses = ({data, handleAddRegister}) => {
          {
 
         data.map(({id, title, image, description})=>(
-             <Card key={id} style={{ width: '18rem'}}>
+             <Card className='cardDiv' key={id} style={{ width: '18rem'}}>
     <Card.Img variant="top" style={{height:"18rem"}} src={image} />
     <Card.Body className='d-flex flex-column justify-content-between align-items-center'>
       <Card.Title>{title}</Card.Title>
@@ -33,7 +33,7 @@ const Courses = ({data, handleAddRegister}) => {
         {description}
       </Card.Text>
       <Button onClick={()=>handleShow(title)}
-      className="btn-close-white btn-success text-white-50 fs-6 w-50" variant="primary">
+      className="btn-close-white btn-success text-white fs-6 w-50" variant="primary">
       Registration</Button>
     </Card.Body>
   </Card>

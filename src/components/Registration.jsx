@@ -22,7 +22,7 @@ const Registration = ({register,handleDelete}) => {
       Registrations {register.length}
     </Button>
 
-    <Offcanvas show={show} onHide={handleClose}>
+    <Offcanvas class="offcanvas "  show={show} onHide={handleClose}>
       <Offcanvas.Header closeButton>
   
              <Offcanvas.Title></Offcanvas.Title>

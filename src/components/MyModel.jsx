@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import img2 from "../images/registration1.png"
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
-
+import Swal from 'sweetalert2'
 import "react-intl-tel-input/dist/main.css";
 // import PhoneForm from "./PhoneForm";
 
@@ -38,7 +38,21 @@ const MyModel = ({ handleAddRegister,  handleClose, show}) => {
       course:course,
       phone:phone
     };
-   
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "success",
+      title: "Registration Successful!"
+    });
     if(name==="" || lastname===""|| email==="" || course === ""|| phone===""){
       alert("Boş bıraktığınız alan yada alanları doldurunuz!")
       return (<div>No registration yet!
