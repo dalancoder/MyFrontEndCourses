@@ -33,7 +33,7 @@ const Courses = ({data, handleAddRegister}) => {
         {description}
       </Card.Text>
       <Button onClick={()=>handleShow(title)}
-      className="btn-warning text-white-50 fs-6 w-50" variant="primary">
+      className="btn-close-white btn-success text-white-50 fs-6 w-50" variant="primary">
       Registration</Button>
     </Card.Body>
   </Card>

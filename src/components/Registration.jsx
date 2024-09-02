@@ -18,7 +18,7 @@ const Registration = ({register,handleDelete}) => {
     const handleShow = () => setShow(true);
   return (
     <>
-    <Button variant="primary" onClick={handleShow}>
+    <Button variant="secondary" onClick={handleShow}>
       Registrations {register.length}
     </Button>
 
