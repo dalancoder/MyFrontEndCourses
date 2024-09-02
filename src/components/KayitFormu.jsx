@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {Row,Col} from 'react-bootstrap';
+
+import {Row} from 'react-bootstrap';
 import { FaTrash } from 'react-icons/fa'; 
 import img2 from "../images/registration1.png";
 

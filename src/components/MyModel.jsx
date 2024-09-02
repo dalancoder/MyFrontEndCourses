@@ -42,7 +42,6 @@ const MyModel = ({ handleAddRegister,  handleClose, show}) => {
     if(name==="" || lastname===""|| email==="" || course === ""|| phone===""){
       Swal.fire({
         icon: "error",
-        title: "Oops...",
         title: "Fill in the field(s) you left blank!",
         
       });

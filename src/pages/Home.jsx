@@ -6,7 +6,7 @@ import data from "../helper/data"
 import Container from 'react-bootstrap/Container';
 import { registration } from '../helper/data';
 import Swal from 'sweetalert2'
-import { faBullseye } from '@fortawesome/free-solid-svg-icons/faBullseye'
+
 
 const Home = () => {
     const [register, setRegister]=useState(registration);
