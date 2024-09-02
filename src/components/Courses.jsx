@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 import MyModel from './MyModel';
 
-const Courses = ({data, handleAddRegister}) => {
+const Courses = ({data, handleAddRegister, visible}) => {
     const [title, setTitle]=useState("");
 
 
@@ -24,7 +24,7 @@ const Courses = ({data, handleAddRegister}) => {
          {
 
         data.map(({id, title, image, description})=>(
-             <Card className='cardDiv' key={id} style={{ width: '18rem'}}>
+             <Card className={`cardDiv ${!visible ? 'd-none' :"" }`} key={id} style={{ width: '18rem'}}>
     <Card.Img variant="top" style={{height:"18rem"}} src={image} />
     <Card.Body className='d-flex flex-column justify-content-between align-items-center'>
       <Card.Title className='title'>{title}</Card.Title>
@@ -39,7 +39,7 @@ const Courses = ({data, handleAddRegister}) => {
   </Card>
         ))
     }
-    
+    <div className={` ${!visible ? 'd-block' :"d-none" }`}> <h1>This Page is building...</h1> </div>
    
     
            

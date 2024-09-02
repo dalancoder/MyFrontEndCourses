@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  overflow: hidden;
+}
 .homeDiv {
   display: flex;
   flex-direction: column;
@@ -67,6 +70,12 @@
 .offcanvas{
  
   background-color: antiquewhite;
+}
+.projectDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 @media screen and (max-width:576px) {

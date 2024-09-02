@@ -6,9 +6,18 @@ import data from "../helper/data"
 import Container from 'react-bootstrap/Container';
 import { registration } from '../helper/data';
 import Swal from 'sweetalert2'
+import { faBullseye } from '@fortawesome/free-solid-svg-icons/faBullseye'
 
 const Home = () => {
     const [register, setRegister]=useState(registration);
+    const [visible, setVisible] = useState(true)
+    const handleNotVisible =()=>{
+      setVisible(false)
+    
+    }
+    const handleVisible =()=>{
+      setVisible(true)
+    }
 
 
     const handleAddRegister =(newRegistration)=>{
@@ -44,15 +53,19 @@ const Home = () => {
     
   return (
     <div className='homeDiv'>
-    <MyNavbar  register={register} handleDelete={handleDelete} />
+    <MyNavbar  register={register} handleDelete={handleDelete} handleNotVisible={handleNotVisible} 
+      handleVisible={handleVisible}
+    />
    
     <Container className='d-flex justify-content-center flex-wrap gap-3'>
 
         
-      
-  <Courses data ={data} handleAddRegister={handleAddRegister}
+     
+          <Courses visible={visible} data ={data} handleAddRegister={handleAddRegister}
     
-  /> 
+  />
+      
+ 
 
 
     </Container>

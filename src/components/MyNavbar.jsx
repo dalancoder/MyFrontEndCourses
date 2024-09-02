@@ -6,7 +6,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import img1 from "../images/avatar.PNG";
 import Registration from "./Registration";
 
-const MyNavbar = ({ register, handleDelete }) => {
+const MyNavbar = ({ register, handleDelete, handleNotVisible, handleVisible}) => {
+ 
   console.log(register);
   return (
     <Navbar expand="lg" className="bg-body-tertiary navDiv">
@@ -28,14 +29,15 @@ const MyNavbar = ({ register, handleDelete }) => {
 
       <Registration register={register} handleDelete={handleDelete} />
      
-        <Nav.Link className="nav-item" href="#home">
+        <Nav.Link onClick={handleVisible} className="nav-item" href="#home">
           Home
         </Nav.Link>
-        <Nav.Link className="nav-item" href="#link">
+        <Nav.Link onClick={handleNotVisible} className="nav-item project-btn" href="#link">
           My Projects
         </Nav.Link>
 
         <NavDropdown
+        onClick={handleNotVisible}
           className="nav-item custom-dropdown"
           title="My Courses"
           id="basic-nav-dropdown"

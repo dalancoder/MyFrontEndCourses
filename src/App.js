@@ -11,7 +11,10 @@ function App() {
  
   return (
 <div>
-<Home/>
+<div>
+  <Home/>
+</div>
+
 <Projects/>
 <Interview/>
 </div>
