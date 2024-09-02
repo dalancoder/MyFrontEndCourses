@@ -38,29 +38,46 @@ const MyModel = ({ handleAddRegister,  handleClose, show}) => {
       course:course,
       phone:phone
     };
-    const Toast = Swal.mixin({
-      toast: true,
-      position: "top-end",
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-      }
-    });
-    Toast.fire({
-      icon: "success",
-      title: "Registration Successful!"
-    });
+   
     if(name==="" || lastname===""|| email==="" || course === ""|| phone===""){
-      alert("Boş bıraktığınız alan yada alanları doldurunuz!")
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        title: "Fill in the field(s) you left blank!",
+        
+      });
+      // alert("Boş bıraktığınız alan yada alanları doldurunuz!")
       return (<div>No registration yet!
         <img src={img2} alt="" />
         </div>)
-    }
+    }else {
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Registration Successful!"
+      });
+    }    
+
     handleAddRegister(newRegistration);
     console.log(newRegistration);
+setName("");
+setLastname("");
+setEmail("");
+setCourse("");
+setPhone("");
+
+
   };
   return (
     <>

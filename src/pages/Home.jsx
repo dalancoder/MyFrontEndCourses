@@ -18,8 +18,7 @@ const Home = () => {
     } 
    
     const handleDelete = (id)=>{
-      // eslint-disable-next-line no-restricted-globals
-    //  let onay = confirm("Are you sure you want to delete the registration?")
+   
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -39,10 +38,7 @@ const Home = () => {
         setRegister(filteredRegister)
       }
     });
-//      if(result.isConfirmed){
-// const filteredRegister = register.filter((item)=>item.id !== id)
-//         setRegister(filteredRegister)
-//      }
+
         
     }
     
