@@ -154,7 +154,7 @@ setPhone("");
             />
           </Form.Group> 
           <div className="d-flex justify-content-evenly mb-3 ">
-            <Button className="btn-info text-white fw-bold"  type="submit" onSubmit={handleSubmit} >
+            <Button className="btn-info text-white fw-bold"  type="submit" onSubmit={handleSubmit} onClick={handleClose} >
             Submit
           </Button>
             <Button className="btn-danger fw-bold " type="button" onClick={handleClose} >
