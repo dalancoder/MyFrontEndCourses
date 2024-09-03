@@ -4,12 +4,12 @@ import MyFooter from '../components/MyFooter'
 import Courses from '../components/Courses'
 import data from "../helper/data"
 import Container from 'react-bootstrap/Container';
-import { registration } from '../helper/data';
+// import { registration } from '../helper/data';
 import Swal from 'sweetalert2'
 
 
 const Home = () => {
-    const [register, setRegister]=useState(registration);
+    const [register, setRegister]=useState(JSON.parse(localStorage.getItem("list"))||[]);
     const [visible, setVisible] = useState(true)
     const handleNotVisible =()=>{
       setVisible(false)
@@ -22,8 +22,8 @@ const Home = () => {
 
     const handleAddRegister =(newRegistration)=>{
         setRegister([...register, newRegistration])
-        console.log("New Registration Added: ", newRegistration);  
-        console.log("Updated Register List: ", register); 
+        localStorage.setItem("list", JSON.stringify([...register, newRegistration]))
+        
     } 
    
     const handleDelete = (id)=>{
@@ -45,6 +45,7 @@ const Home = () => {
         });
         const filteredRegister = register.filter((item)=>item.id !== id)
         setRegister(filteredRegister)
+        localStorage.setItem("list", JSON.stringify(filteredRegister));
       }
     });
 
