@@ -38,7 +38,7 @@ const MyNavbar = ({ register, handleDelete, handleNotVisible, handleVisible}) =>
         <NavDropdown
         onClick={handleNotVisible}
           className="nav-item custom-dropdown"
-          title="My Courses"
+          title="Interview"
           id="basic-nav-dropdown"
         >
           <NavDropdown.Item href="#action/3.1">Html - Css</NavDropdown.Item>
