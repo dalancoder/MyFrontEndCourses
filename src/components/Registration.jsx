@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react';
 import {Button} from 'react-bootstrap';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
 import KayitFormu from './KayitFormu';
+import { UserContext } from '../context/UserProvider';
 
-const Registration = ({register,handleDelete}) => {
+const Registration = () => {
+  const {register, handleDelete} =useContext(UserContext)
     
    
-    
+    console.log(register);
 
    
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+   
   return (
     <>
     <Button variant="secondary" onClick={handleShow}>
@@ -34,7 +38,7 @@ const Registration = ({register,handleDelete}) => {
       </Offcanvas.Body>
       <Offcanvas.Body>
 
-     <KayitFormu register={register} handleDelete={handleDelete}/>
+     <KayitFormu />
 
       </Offcanvas.Body>
     </Offcanvas>

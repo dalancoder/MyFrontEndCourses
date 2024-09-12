@@ -1,9 +1,9 @@
 import React from 'react'
 
-const interview = () => {
+const Interview = () => {
   return (
-    <div></div>
+    <div>Merhaba</div>
   )
 }
 
-export default interview
+export default Interview

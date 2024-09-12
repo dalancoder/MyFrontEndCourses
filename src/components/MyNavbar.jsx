@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import img1 from "../images/avatar.PNG";
 import Registration from "./Registration";
+import { NavLink, useNavigate } from "react-router-dom";
 
-const MyNavbar = ({ register, handleDelete, handleNotVisible, handleVisible}) => {
+
+const MyNavbar = () => {
+  
+  const navigate=useNavigate()
+  
  
-  console.log(register);
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary navDiv">
       {/* <Container className='navDiv '> */}
@@ -26,19 +31,19 @@ const MyNavbar = ({ register, handleDelete, handleNotVisible, handleVisible}) =>
         
     
 
-      <Registration register={register} handleDelete={handleDelete} />
+      <Registration  />
      
-        <Nav.Link onClick={handleVisible} className="nav-item" href="#home">
+        <NavLink to="/" className="nav-item" href="#home">
           Home
-        </Nav.Link>
-        <Nav.Link onClick={handleNotVisible} className="nav-item project-btn" href="#link">
+        </NavLink>
+        <NavLink to="/projects" className="nav-item project-btn" href="#link">
           My Projects
-        </Nav.Link>
+        </NavLink>
 
         <NavDropdown
-        onClick={handleNotVisible}
-          className="nav-item custom-dropdown"
-          title="Interview"
+          onClick={()=>navigate("/interview")}
+          className="nav-item fs-6 custom-dropdown"
+          title="Interview Questions"
           id="basic-nav-dropdown"
         >
           <NavDropdown.Item href="#action/3.1">Html - Css</NavDropdown.Item>

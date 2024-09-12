@@ -2,9 +2,12 @@
 import {Row} from 'react-bootstrap';
 import { FaTrash } from 'react-icons/fa'; 
 import img2 from "../images/registration1.png";
+import { useContext } from 'react';
+import { UserContext } from '../context/UserProvider';
 
 
-const KayitFormu = ({register,handleDelete}) => {
+const KayitFormu = () => {
+  const {register, handleDelete}=useContext(UserContext)
  
 
     if(register.length === 0){

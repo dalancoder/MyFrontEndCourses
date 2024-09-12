@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
@@ -8,10 +8,12 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import Swal from 'sweetalert2'
 import "react-intl-tel-input/dist/main.css";
+import { UserContext } from "../context/UserProvider";
 // import PhoneForm from "./PhoneForm";
 
 
-const MyModel = ({ handleAddRegister,  handleClose, show}) => {
+const MyModel = ({ handleClose, show}) => {
+  const {handleAddRegister}=useContext(UserContext)
   const [phone, setPhone] = useState('');
 
   const handlePhoneChange = (value) => {
